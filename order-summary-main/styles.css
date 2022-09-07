@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(./images/pattern-background-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  background-color: var(--pale-blue);
+}
+
+p {
+  color: var(--desaturated-blue);
+}
+
+.card-container {
+  margin: 2em 1em;
+  border-radius: 25px;
+  background-color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 376px) {
+  body {
+    background-image: url(./images/pattern-background-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .card-container {
+    margin: 0;
+    max-width: 400px;
+  }
+}
+
+.card-image {
+  width: 100%;
+  border-top-left-radius: 22.5px;
+  border-top-right-radius: 22.5px;
+}
+
+.card-component {
+  padding-bottom: 1em;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-text h2 {
+  margin: 0.5em 0;
+  font-size: 1.75rem;
+  color: var(--dark-blue);
+  font-weight: 900;
+}
+
+.card-text p {
+  margin: 0 0.5em;
+  padding: 0 0.5em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.card-pricing {
+  background-color: var(--very-pale-blue);
+  padding: 0.75em;
+  margin: 1.5em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-music-icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.price-plan h3,
+.price-plan p {
+  margin: 0;
+}
+
+.price-plan h3 {
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.price-plan p {
+  margin-top: 0.25em;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+/* continue from here */
+
+.card-pricing a {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.card-pricing a:hover {
+  color: var(--bright-blue);
+}
+
+.card-checkout {
+  padding: 0;
+  margin: 0 1.5em;
+}
+
+.card-checkout a {
+  display: block;
+  width: 100%;
+  padding: 1em 0.25em;
+  border-radius: 10px;
+  border: 0;
+  background-color: var(--bright-blue);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 15px 10px 0px hsla(245, 75%, 52%, 0.19);;
+  /* box-shadow: 0px 2px 12px 2px var(--bright-blue); */
+}
+
+.card-checkout a:hover {
+  background-color: var(--desaturated-blue);
+}
+.card-checkout p {
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0;
+  padding: 1em;
+}
+
+.card-checkout p:hover {
+  color: var(--dark-blue);
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.attribution p {
+  margin: 0.5em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
