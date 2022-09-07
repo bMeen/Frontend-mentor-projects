@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 20%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+/* GLOBAL STYLES */
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  word-spacing: 1px;
+  margin-bottom: 0.75em;
+}
+
+p {
+  color: var(--light-grey);
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+.hidden {
+  display: none;
+}
+
+main {
+  width: 90%;
+}
+
+@media screen and (min-width: 500px) {
+  main {
+    max-width: 350px;
+  }
+}
+
+.section {
+  background-color: var(--dark-blue);
+  padding: 1.5em;
+  border-radius: 10px;
+}
+
+/* RATING STYLES */
+
+#rating-section img {
+  background-color: rgba(71, 95, 128, 0.2);
+  border-radius: 50%;
+  padding: 12px;
+  margin-bottom: 0.75em;
+}
+
+#rating-section ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5em 0;
+}
+
+li {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(71, 95, 128, 0.2);
+  text-align: center;
+  color: var(--light-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+#rating-section button {
+  font-size: 1.05rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--orange);
+  width: 100%;
+  border-radius: 25px;
+  padding: 0.65em;
+  border: none;
+  margin-bottom: 0.5em;
+}
+
+#rating-section button:hover {
+  color: var(--orange);
+  background-color: white;
+}
+
+/* AFTER SUBMISSION STYLES */
+
+#submit-section {
+  text-align: center;
+}
+
+#submit-section img {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#submit-section .rating-results {
+  color: var(--orange);
+  background-color: rgba(71, 95, 128, 0.2);
+  padding: 0.45em 0.85em;
+  display: inline-block;
+  border-radius: 15px;
+  font-weight: 400;
+  margin: 1.5em;
+}
+
+#submit-section h2 {
+  margin-bottom: 0.5em;
+}
+
+footer.attribution {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.attribution p {
+  margin: 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
