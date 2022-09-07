@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsla(240, 73%, 65%);
+
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  width: 340px;
+  margin-top: 7em;
+  background-color: white;
+  border-radius: 15px;
+  position: relative;
+  background-image: url(/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 249px;
+  background-position: top;
+}
+
+img.illustration-img-mb {
+  max-width: 249px;
+  margin: 0 auto;
+  position: absolute;
+  top: -110px;
+  left: 50px;
+}
+
+.desktop {
+  display: none;
+  position: relative;
+}
+
+.illustration-box {
+  display: none;
+}
+
+section {
+  margin-top: 100px;
+  padding: 2em 1.5em 4em;
+}
+
+section h1 {
+  font-weight: 700;
+  font-size: 2.46em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+section ul {
+  font-size: 1.3em;
+}
+
+.question-item {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  position: relative;
+}
+
+summary {
+  color: var(--very-dark-grayish-blue);
+  list-style: none;
+  padding: 1em 0;
+}
+
+summary::after {
+  content: url(/images/icon-arrow-down.svg);
+  position: absolute;
+  right: 0;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+details[open] summary {
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.answer {
+  color: var(--dark-grayish-blue);
+  padding-bottom: 1em;
+  line-height: 1.4;
+}
+
+footer {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+footer p {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 0.25em;
+}
+
+footer a {
+  color: var(--very-dark-desaturated-blue);
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0 0;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: -10% center;
+  }
+
+  img.illustration-img-mb {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+    width: 40%;
+    overflow: hidden;
+  }
+
+  img.illustration-img-dk {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: -50px;
+  }
+
+  .illustration-box {
+    display: block;
+    position: absolute;
+    bottom: 70px;
+    left: -97px;
+    z-index: 1;
+  }
+
+  section {
+    width: 45%;
+    max-width: 400px;
+    margin-right: 5%;
+    margin-top: 0;
+  }
+
+  section h1 {
+    text-align: left;
+  }
+
+  summary:hover {
+    cursor: pointer;
+    color: var(--soft-red);
+  }
+}
