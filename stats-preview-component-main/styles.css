@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white-stats: hsla(0, 0%, 100%, 0.6);
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+}
+
+body {
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  background-color: var(--very-dark-blue);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+main {
+  border-radius: 6px;
+  background-color: var(--dark-desaturated-blue);
+  width: 90%;
+  margin: 2em auto;
+}
+
+section.card-image,
+.card-image img {
+  border-radius: 6px 6px 0 0;
+}
+
+section.card-image {
+  background-color: var(--soft-violet);
+  height: 300px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+section.card-component {
+  text-align: center;
+  padding: 2.5em;
+}
+
+.card-component h1 {
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 0.75em;
+}
+
+.card-component span {
+  color: var(--soft-violet);
+}
+
+.card-component p {
+  color: var(--slightly-transparent-white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 3em;
+}
+
+.card-component ul,
+.card-component li {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-component li {
+  color: var(--white);
+  margin-bottom: 1.5em;
+}
+
+.card-component li:last-child {
+  margin-bottom: 0;
+}
+
+.card-component li h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.2em;
+}
+
+.card-component li p {
+  text-transform: uppercase;
+  color: var(--slightly-transparent-white);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--slightly-transparent-white);
+  margin-bottom: 2em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 75%;
+    margin-bottom: 0;
+  }
+
+  section.card-component {
+    width: 50%;
+    text-align: left;
+    padding: 3em 4em 3em 3em;
+  }
+
+  .card-component p {
+    margin-bottom: 5em;
+  }
+
+  .card-component ul {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 3em;
+  }
+
+  .card-component li {
+    margin-bottom: 0;
+  }
+
+  section.card-image,
+  .card-image img {
+    border-radius: 0 6px 6px 0;
+  }
+
+  section.card-image {
+    width: 50%;
+    height: auto;
+  }
+}
