@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--dark-cyan);
+  font-size: 18px;
+  text-align: center;
+  background-image: url(/images/bg-pattern-top.svg),
+    url(/images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: top -90px left -50px, bottom -90px right -50px;
+  background-size: 30vh, 100vh;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--dark-gray);
+}
+
+main {
+  max-width: 338px;
+  width: 90%;
+  margin: 7em auto 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+section.background-pattern img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+section.profile-info {
+  border-bottom: 1px solid var(--dark-gray);
+  padding-bottom: 1.25em;
+}
+
+section.profile-info img {
+  border-radius: 50%;
+  border: 5px solid white;
+  margin: -60px auto 0.75em auto;
+}
+
+.profile-name {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 0.25em;
+}
+
+.profile-name h1 {
+  margin-right: 0.5em;
+}
+
+.profile-name p {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-stats {
+  padding: 1.125em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-item h2 {
+  margin-bottom: 0.1em;
+}
+
+.stats-item p {
+  font-size: 0.85em;
+  letter-spacing: 1px;
+}
+
+footer.attribution {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.attribution p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    background-position: top -200px left -90px, bottom -350px right -90px;
+    background-size: 100vh, 100vh;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
