@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --light-cyan: rgb(81, 196, 194);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --bright-gray: hsl(206, 30%, 77%);
+  --light-gray: hsl(206, 30%, 86%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  background-color: var(--light-gray);
+  color: var(--light-gray);
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Mobile Design (Mobile-First) */
+
+/* INFO_SECTION */
+main {
+  width: 90%;
+  margin: 2em auto 1em;
+}
+
+section.info-section {
+  background-color: white;
+  padding: 2em 1.2em;
+  border-radius: 4px 4px 0 0;
+}
+
+section.info-section h2 {
+  color: var(--cyan);
+  font-size: 1.25rem;
+  margin-bottom: 0.75em;
+  font-weight: 700;
+}
+
+section.info-section h3 {
+  color: var(--bright-yellow);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin-bottom: 0.75em;
+}
+
+section.info-section p {
+  color: var(--bright-gray);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* PRICING SECTION */
+section.pricing-section {
+  padding: 1.5em 1.2em;
+  background-color: var(--cyan);
+  color: var(--light-gray);
+  letter-spacing: 1px;
+}
+
+section.pricing-section h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 1em;
+}
+
+section.pricing-section p {
+  margin-bottom: 1.5em;
+}
+
+.pricing-section .subscription-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.subscription-container .price {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 0.25em;
+  margin-bottom: 0;
+}
+
+.subscription-container p:last-child {
+  color: var(--light-gray);
+  margin-bottom: 0;
+}
+
+.pricing-section a {
+  font-size: 1.25rem;
+  display: block;
+  text-align: center;
+  background-color: var(--bright-yellow);
+  width: 100%;
+  color: var(--light-gray);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+
+/* REFERENCE-SECTION */
+section.reference-section {
+  padding: 1.5em 1.2em;
+  background-color: var(--light-cyan);
+  border-radius: 0 0 4px 4px;
+}
+
+section.reference-section h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 1em;
+}
+
+section.reference-section li {
+  margin-bottom: 0.25em;
+}
+
+section.reference-section li:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--cyan);
+  margin-bottom: 2em;
+}
+
+footer p {
+  margin-bottom: 0.25em;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* DESKTOP DESIGN */
+@media screen and (min-width: 500px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    width: 55%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  section.info-section {
+    grid-column-start: span 2;
+    padding: 2em 2em;
+  }
+
+  section.pricing-section {
+    padding: 2em 2em 1em;
+    border-radius: 0 0 0 4px;
+  }
+
+  .pricing-section a {
+    margin: 2em 0 0;
+  }
+
+  section.reference-section {
+    padding: 2em 2em;
+    border-radius: 0 0 4px 0;
+  }
+}
