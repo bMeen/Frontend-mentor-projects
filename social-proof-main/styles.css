@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  background-image: url(./images/bg-pattern-bottom-mobile.svg),
+    url(./images/bg-pattern-top-mobile.svg);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  font-family: "League Spartan", sans-serif;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  border-radius: 50%;
+}
+
+p,
+h2,
+h3 {
+  font-size: 1.125rem;
+}
+
+/* MOBILE FIRST LAYOUT */
+
+main {
+  width: 90%;
+  margin: 3em auto 1em;
+}
+
+section.information-section {
+  text-align: center;
+}
+
+.information-section h1 {
+  font-size: 2.25rem;
+  color: var(--very-dark-magenta);
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+
+.information-section p {
+  color: var(--dark-grayish-magenta);
+  margin-bottom: 2em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ratings-section {
+  margin-bottom: 2.5em;
+}
+
+.ratings-item {
+  padding: 1em;
+  background-color: var(--light-grayish-magenta);
+  margin-bottom: 0.75em;
+  border-radius: 8px;
+}
+
+.ratings-icons {
+  margin-bottom: 0.5em;
+}
+
+.ratings-item h2 {
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+}
+
+.review-card-item {
+  background-color: var(--very-dark-magenta);
+  margin-bottom: 0.75em;
+  border-radius: 8px;
+  padding: 2em;
+  color: var(--white);
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.review-card-header img {
+  width: 20%;
+  margin-right: 1.5em;
+}
+
+.buyer-info p {
+  color: var(--soft-pink);
+}
+
+.review-card-item p {
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  color: var(--very-dark-magenta);
+  margin-bottom: 2em;
+}
+
+footer p {
+  margin-bottom: 0.25em;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* DESKTOP DESIGN*/
+@media screen and (min-width: 500px) {
+  body {
+    background-image: url(./images/bg-pattern-bottom-desktop.svg),
+      url(./images/bg-pattern-top-desktop.svg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  main {
+    width: 75%;
+  }
+
+  section.information-section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .info-section {
+    text-align: left;
+    width: 40%;
+  }
+
+  .information-section h1 {
+    font-size: 3rem;
+    margin-bottom: 0.25em;
+  }
+
+  .information-section p {
+    line-height: 1.3;
+  }
+
+  .ratings-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .ratings-item {
+    display: flex;
+    align-self: flex-end;
+    width: 90%;
+  }
+
+  .margin-right {
+    margin-right: 2em;
+  }
+
+  #margin-right {
+    margin-right: 4em;
+  }
+
+  .ratings-icons {
+    margin: 0 1em;
+  }
+
+  .customer-review-card-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    column-gap: 20px;
+  }
+
+  .review-card-item {
+    margin-bottom: 0;
+  }
+  .margin-top {
+    position: relative;
+    top: 20px;
+  }
+
+  #margin-top {
+    position: relative;
+    top: 40px;
+  }
+
+  footer {
+    margin: 2.5em 0;
+  }
+}
