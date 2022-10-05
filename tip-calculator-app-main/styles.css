@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  --lb-clr: var(--grayish-cyan);
+  --input-clr: var(--very-dark-cyan);
+  --input-bg-clr: var(--very-light-grayish-cyan);
+  --rates-clr: var(--very-dark-cyan);
+  --hover-clr: rgb(40, 236, 210);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: var(--light-grayish-cyan);
+  font-weight: 700;
+  overflow: auto;
+}
+
+img {
+  display: block;
+  max-width: 4.68rem;
+  margin: 3em auto 1.5em;
+}
+
+main {
+  background-color: var(--white);
+  padding: 1.75rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  color: var(--lb-clr);
+  margin-bottom: 0.25em;
+}
+
+input {
+  width: 100%;
+  display: block;
+  padding: 0.35rem 0.75rem;
+  text-align: end;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--input-clr);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: var(--input-bg-clr);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* input:focus, */
+input:hover {
+  border: 2px solid var(--strong-cyan);
+}
+
+input#bill,
+input#people {
+  background-repeat: no-repeat;
+  background-position: 10px 12px;
+  margin: 0.5rem 0;
+}
+
+input#bill {
+  background-image: url(./images/icon-dollar.svg);
+}
+
+input#people {
+  background-image: url(./images/icon-person.svg);
+}
+
+div.bill-section {
+  margin-bottom: 2.5rem;
+}
+
+div.rate-percent-section p {
+  color: var(--lb-clr);
+  margin-bottom: 0.5rem;
+}
+
+.rates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.tip-rate {
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+
+  background-color: var(--rates-clr);
+}
+
+li.tip-rate:last-child {
+  background-color: white;
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+}
+
+input#custom-rate {
+  height: 100%;
+}
+
+div.people-section {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.active {
+  color: var(--input-clr);
+  background-color: var(--strong-cyan);
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  color: red;
+}
+
+section.tip-total {
+  background-color: var(--very-dark-cyan);
+  border-radius: 12px;
+  padding: 2rem 1rem 1rem;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+div.amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+div.amount h4 {
+  font-size: 1.1rem;
+}
+
+div.amount p {
+  font-size: 0.95rem;
+  font-weight: 100;
+  color: var(--lb-clr);
+}
+
+div.amount .figure {
+  color: var(--strong-cyan);
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--hover-clr);
+}
+
+footer {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--very-dark-cyan);
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 24px;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    margin-bottom: 3em;
+  }
+
+  section.column {
+    width: 47%;
+  }
+
+  .rates {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 2rem;
+  }
+
+  .tip-rate:hover {
+    color: var(--input-clr);
+    background-color: var(--hover-clr);
+    cursor: pointer;
+  }
+
+  section.tip-total {
+    align-self: stretch;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  div.amount .figure {
+    font-size: 2.5rem;
+  }
+
+  button {
+    padding: 1rem;
+  }
+}
