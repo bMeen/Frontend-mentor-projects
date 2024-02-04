@@ -1,0 +1,159 @@
+/**************************/
+/* BELOW 1168px */
+/**************************/
+
+@media (max-width: 73em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .heading-primary {
+    font-size: 3.6rem;
+  }
+}
+
+/**************************/
+/* BELOW 992px */
+/**************************/
+
+@media (max-width: 62em) {
+  html {
+    font-size: 50%;
+  }
+
+  .head-tertiary {
+    font-size: 2.4rem;
+  }
+}
+
+/**************************/
+/* BELOW 789px */
+/**************************/
+@media (max-width: 50em) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1.6rem 4.8rem;
+  }
+
+  .heading-primary {
+    font-size: 3rem;
+  }
+
+  .hero-container {
+    column-gap: 3.2rem;
+  }
+
+  .heading-secondary {
+    font-size: 2rem;
+  }
+
+  .head-tertiary {
+    font-size: 2rem;
+  }
+}
+
+/**************************/
+/* BELOW 640px  */
+/**************************/
+@media (max-width: 40em) {
+  .header-logo {
+    width: 15rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 1rem 3.2rem;
+    font-size: 1.2rem;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  header {
+    padding: 3.2rem 2.4rem 6.4rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    row-gap: 6.4rem;
+    padding: 0 2rem;
+  }
+
+  .hero-text-box {
+    text-align: center;
+  }
+
+  main {
+    padding: 0 2.4rem;
+  }
+
+  .section-feature {
+    padding-top: 10rem;
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+    row-gap: 9.6rem;
+    padding: 4.8rem 2.4rem;
+  }
+
+  .feature-text-box {
+    text-align: center;
+  }
+
+  .feature-img-box {
+    grid-row: 1;
+  }
+
+  .section-cta {
+    width: 90%;
+    margin: 0 auto;
+    padding: 4.8rem 2.4rem;
+  }
+
+  footer {
+    background-color: #00252e;
+    padding: 18rem 2.4rem 0 3.2rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+
+  .logo-ft {
+    width: 20rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    column-gap: 4.8rem;
+    row-gap: 2rem;
+  }
+
+  .contacts {
+    margin-bottom: 3.2rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .copyright-text {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 376px) {
+  header {
+    background-image: linear-gradient(
+        rgba(235, 251, 255, 0.3),
+        rgba(235, 251, 255, 0.3)
+      ),
+      url("../images/bg-hero-mobile.svg");
+    background-size: cover;
+    background-position: center;
+  }
+}
