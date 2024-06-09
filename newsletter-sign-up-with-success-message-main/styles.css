@@ -1,0 +1,304 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+:root {
+  --tomato: #ff6257;
+  --tomato-transparent: hsl(4, 100%, 93.7%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  --gradient-1: #ff527b;
+  --gradient-2: #ff6a3d;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--dark-slate-grey);
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--grey);
+}
+
+img {
+  display: inline-block;
+}
+
+.container {
+  background-color: var(--white);
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-h {
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container-sign-up {
+  max-width: 90rem;
+  width: 90%;
+  display: flex;
+  border-radius: 2.7rem;
+  padding: 1.6rem;
+}
+
+section.content-sec {
+  width: 50%;
+  padding: 3.2rem;
+}
+
+section.illustration-sec {
+  width: 50%;
+}
+
+img.illustration-svg-desktop {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: bold;
+  margin-bottom: 2.4rem;
+}
+
+.content-text {
+  margin-bottom: 2.4rem;
+}
+
+ul,
+li {
+  display: flex;
+}
+
+ul {
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+}
+
+li {
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+img.list-icon {
+  margin-right: 1.6rem;
+}
+
+input,
+button {
+  width: 100%;
+  font-size: 1.6rem;
+  border-radius: 6px;
+  padding: 1.6rem 2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid var(--grey);
+  margin-bottom: 1.6rem;
+}
+
+input:focus {
+  border-color: var(--dark-slate-grey);
+}
+
+button {
+  border: none;
+  color: var(--white);
+  background-color: var(--dark-slate-grey);
+  font-weight: bold;
+}
+
+button:hover {
+  background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+}
+
+.error-message {
+  color: var(--tomato);
+}
+
+input[class="error"] {
+  color: var(--tomato);
+  background-color: var(--tomato-transparent);
+}
+
+input[class="error"]:focus {
+  border-color: var(--tomato);
+}
+
+/* Success message start */
+.container-success {
+  max-width: 50rem;
+  width: 100%;
+  border-radius: 2.7rem;
+  padding: 4.8rem;
+}
+
+.success-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 2.4rem;
+}
+
+.heading-secondary {
+  font-size: 5.2rem;
+  margin-bottom: 2.4rem;
+  line-height: 1;
+}
+
+.email {
+  font-weight: bold;
+}
+
+.container-success p {
+  margin-bottom: 4.8rem;
+  line-height: 1.6;
+}
+
+/* Success message end */
+footer {
+  color: var(--grey);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+footer a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 61em) {
+  .heading-primary {
+    font-size: 3.2rem;
+  }
+
+  section.content-sec {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  input,
+  button {
+    padding: 1.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 40em) {
+  body {
+    background-color: var(--white);
+  }
+  div[class="flex flex-h"] {
+    display: block;
+  }
+
+  .heading-primary,
+  .heading-secondary {
+    font-size: 4rem;
+  }
+
+  .container-sign-up {
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  section.content-sec {
+    width: 100%;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    display: block;
+  }
+
+  section.illustration-sec {
+    width: 100%;
+  }
+
+  img.illustration-svg-desktop {
+    display: none;
+  }
+
+  img.illustration-svg-mobile {
+    display: block;
+    width: 100%;
+    padding-bottom: 2.4rem;
+  }
+
+  li {
+    align-items: flex-start;
+  }
+
+  input,
+  button {
+    font-size: 1.6rem;
+  }
+
+  .label {
+    font-size: 1.4rem;
+  }
+
+  .container-success {
+    max-width: inherit;
+    border-radius: 0;
+    padding: 1.6rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .success-content {
+    margin-top: 10rem;
+  }
+}
