@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--dark-purple);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--dark-purple);
+}
+
+h3:hover {
+  color: #ad28eb;
+  cursor: pointer;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--light-pink);
+}
+
+.header {
+  background-image: url(../public/images/background-pattern-mobile.svg);
+  height: 232px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Accordion {
+  transform: translateY(-10rem);
+  width: 90%;
+  max-width: 55rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2rem;
+  padding-bottom: 0;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--light-pink);
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+@media (min-width: 376px) {
+  .header {
+    background-image: url(../public/images/background-pattern-desktop.svg);
+    height: 320px;
+  }
+}
