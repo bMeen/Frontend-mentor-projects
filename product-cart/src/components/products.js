@@ -1,37 +1,22 @@
 import { useEffect, useState } from "react";
+import { useProduct } from "../context/ProductContext";
 
-export default function Products({
-  products,
-  onhandleAddToCart,
-  onhandleIncreaseQuantity,
-  onhandleDecreaseQuantity,
-}) {
+export default function Products() {
+  const { products } = useProduct();
   return (
     <section className="md:basis-[70%]">
       <h1 className="text-4xl font-bold text-rose-900 mb-5">Desserts</h1>
       <ul className="mb-7 grid  gap-x-5 gap-y-8 md:grid-cols-2  lg:grid-cols-3">
-        {products.map((product, i) => (
-          <ProductItem
-            product={product}
-            key={product.name}
-            onhandleAddToCart={onhandleAddToCart}
-            onhandleIncreaseQuantity={onhandleIncreaseQuantity}
-            onhandleDecreaseQuantity={onhandleDecreaseQuantity}
-          />
+        {products.map((product) => (
+          <ProductItem product={product} key={product.name} />
         ))}
       </ul>
     </section>
   );
 }
 
-function ProductItem({
-  product,
-  onhandleAddToCart,
-  onhandleIncreaseQuantity,
-  onhandleDecreaseQuantity,
-}) {
+function ProductItem({ product }) {
   const [imgSrc, setImgsrc] = useState("");
-
   const { image, name, category, price, isActive } = product;
 
   useEffect(function () {
@@ -64,16 +49,9 @@ function ProductItem({
         }`}
       >
         {isActive ? (
-          <Counter
-            product={product}
-            onhandleIncreaseQuantity={onhandleIncreaseQuantity}
-            onhandleDecreaseQuantity={onhandleDecreaseQuantity}
-          />
+          <Counter product={product} />
         ) : (
-          <AddToCartIcon
-            product={product}
-            onhandleAddToCart={onhandleAddToCart}
-          />
+          <AddToCartIcon product={product} />
         )}
       </button>
       <p className="mb-[2px] -mt-2">{category}</p>
@@ -83,9 +61,13 @@ function ProductItem({
   );
 }
 
-function AddToCartIcon({ product, onhandleAddToCart }) {
+function AddToCartIcon({ product }) {
+  const { dispatch } = useProduct();
   return (
-    <div className="px-6 " onClick={() => onhandleAddToCart(product)}>
+    <div
+      className="px-6 "
+      onClick={() => dispatch({ type: "add-to-cart", payload: product })}
+    >
       <img
         src="./assets/images/icon-add-to-cart.svg"
         alt="icon"
@@ -98,11 +80,8 @@ function AddToCartIcon({ product, onhandleAddToCart }) {
   );
 }
 
-function Counter({
-  product,
-  onhandleIncreaseQuantity,
-  onhandleDecreaseQuantity,
-}) {
+function Counter({ product }) {
+  const { dispatch } = useProduct();
   const [hoverMinus, setHoverMinus] = useState(false);
   const [hoverPlus, setHoverPlus] = useState(false);
 
@@ -112,7 +91,7 @@ function Counter({
         className="border-[1px] border-white rounded-full hover:bg-white hover:border-red p-1"
         onMouseEnter={() => setHoverMinus(true)}
         onMouseLeave={() => setHoverMinus(false)}
-        onClick={() => onhandleDecreaseQuantity(product)}
+        onClick={() => dispatch({ type: "decrease", payload: product })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +113,7 @@ function Counter({
         className="border-[1px] border-white rounded-full hover:bg-white hover:border-red p-1"
         onMouseEnter={() => setHoverPlus(true)}
         onMouseLeave={() => setHoverPlus(false)}
-        onClick={() => onhandleIncreaseQuantity(product)}
+        onClick={() => dispatch({ type: "increase", payload: product })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

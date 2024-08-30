@@ -1,7 +1,9 @@
 import { useState } from "react";
 import TotalOrder from "./TotalOrder";
+import { useProduct } from "../context/ProductContext";
 
-export default function Cart({ cart, onhandleRemoveCart, onhandleSetConfirm }) {
+export default function Cart() {
+  const { cart } = useProduct();
   const totalQuantity = cart
     .map((item) => item.quantity)
     .reduce((acc, item) => acc + item, 0);
@@ -12,15 +14,7 @@ export default function Cart({ cart, onhandleRemoveCart, onhandleSetConfirm }) {
         Your Cart({totalQuantity})
       </h2>
 
-      {cart.length > 0 ? (
-        <Summary
-          cart={cart}
-          onhandleRemoveCart={onhandleRemoveCart}
-          onhandleSetConfirm={onhandleSetConfirm}
-        />
-      ) : (
-        <Empty />
-      )}
+      {cart.length > 0 ? <Summary /> : <Empty />}
     </div>
   );
 }
@@ -40,40 +34,30 @@ function Empty() {
   );
 }
 
-function Summary({ cart, onhandleRemoveCart, onhandleSetConfirm }) {
-  const totalOrderAmount = cart
-    .map((item) => item.price * item.quantity)
-    .reduce((acc, cur) => acc + cur, 0);
-
+function Summary() {
   return (
     <div>
-      <CartItems cart={cart} onhandleRemoveCart={onhandleRemoveCart} />
-
-      <TotalOrder totalOrderAmount={totalOrderAmount} />
-
+      <CartItems />
+      <TotalOrder />
       <Carbon />
-
-      <Button onhandleSetConfirm={onhandleSetConfirm} />
+      <Button />
     </div>
   );
 }
 
-function CartItems({ cart, onhandleRemoveCart }) {
+function CartItems() {
+  const { cart } = useProduct();
   return (
     <ul className="max-h-64 h-auto lg:max-h-[764px] overflow-y-scroll no-scrollbar">
       {cart.map((cart) => (
-        <Item
-          cart={cart}
-          key={cart.name}
-          onhandleRemoveCart={onhandleRemoveCart}
-        />
+        <Item cart={cart} key={cart.name} />
       ))}
     </ul>
   );
 }
 
-function Item({ cart, onhandleRemoveCart }) {
-  const { name, price, quantity } = cart;
+function Item({ cart }) {
+  const { name, price, quantity, id } = cart;
 
   return (
     <li className="flex justify-between items-center border-b-[1px] border-rose-100 py-4">
@@ -87,7 +71,7 @@ function Item({ cart, onhandleRemoveCart }) {
           </p>
         </div>
       </div>
-      <CancelIcon onhandleRemoveCart={onhandleRemoveCart} cart={cart} />
+      <CancelIcon id={id} />
     </li>
   );
 }
@@ -107,7 +91,8 @@ function Carbon() {
   );
 }
 
-function CancelIcon({ cart, onhandleRemoveCart }) {
+function CancelIcon({ id }) {
+  const { dispatch } = useProduct();
   const [hover, setHover] = useState(false);
 
   return (
@@ -115,7 +100,7 @@ function CancelIcon({ cart, onhandleRemoveCart }) {
       className="border-2 border-rose-300 rounded-full p-[2px] hover:border-rose-900"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      onClick={() => onhandleRemoveCart(cart.id)}
+      onClick={() => dispatch({ type: "remove", payload: id })}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -133,11 +118,12 @@ function CancelIcon({ cart, onhandleRemoveCart }) {
   );
 }
 
-function Button({ onhandleSetConfirm }) {
+function Button() {
+  const { dispatch } = useProduct();
   return (
     <button
       className="text-white bg-red w-full text-center my-5 rounded-full py-3"
-      onClick={onhandleSetConfirm}
+      onClick={() => dispatch({ type: "submit" })}
     >
       Confirm Order
     </button>

@@ -1,4 +1,10 @@
-export default function TotalOrder({ totalOrderAmount }) {
+import { useProduct } from "../context/ProductContext";
+
+export default function TotalOrder() {
+  const { cart } = useProduct();
+  const totalOrderAmount = cart
+    .map((item) => item.price * item.quantity)
+    .reduce((acc, cur) => acc + cur, 0);
   return (
     <div className="flex items-center justify-between py-5 text-rose-900">
       <p className="text-sm">Order Total</p>

@@ -1,10 +1,7 @@
+import { useProduct } from "../context/ProductContext";
 import TotalOrder from "./TotalOrder";
 
-export default function Confirmed({ cart, onhandleReset }) {
-  const totalOrderAmount = cart
-    .map((item) => item.price * item.quantity)
-    .reduce((acc, cur) => acc + cur, 0);
-
+export default function Confirmed() {
   return (
     <section className="fixed w-full left-0 bottom-0 md:left-1/2 md:bottom-1/2 md:-translate-x-1/2 md:translate-y-1/2 md:w-[565px] z-20 bg-white rounded-lg px-4 ">
       <img
@@ -19,16 +16,17 @@ export default function Confirmed({ cart, onhandleReset }) {
       <p className="text-sm">We hope you enjoyed your food!</p>
 
       <div className="px-3 mt-3 rounded-lg bg-rose-100">
-        <Orders cart={cart} />
-        <TotalOrder totalOrderAmount={totalOrderAmount} />
+        <Orders />
+        <TotalOrder />
       </div>
 
-      <Button onhandleReset={onhandleReset} />
+      <Button />
     </section>
   );
 }
 
-function Orders({ cart }) {
+function Orders() {
+  const { cart } = useProduct();
   return (
     <ul className="h-auto max-h-64 overflow-y-scroll no-scrollbar">
       {cart.map((cart) => (
@@ -71,11 +69,12 @@ function OrderItem({ cart }) {
   );
 }
 
-function Button({ onhandleReset }) {
+function Button() {
+  const { dispatch } = useProduct();
   return (
     <button
       className="text-white bg-red w-full text-center my-5 rounded-full py-3"
-      onClick={onhandleReset}
+      onClick={() => dispatch({ type: "reset" })}
     >
       Start New Order
     </button>
