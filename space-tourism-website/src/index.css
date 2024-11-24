@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --blue-900: #0b0d17;
+  --blue-300: #d0d6f9;
+
+  /* Typography */
+  --font-bellefair: "Bellefair", serif;
+  --font-barlow: "Barlow", sans-serif;
+  --font-barlow-condensed: "Barlow Condensed", sans-serif;
+
+  /* Mobile */
+  --text-preset-1: 80px;
+  --text-preset-2: 56px;
+  --text-preset-3: 24px;
+  --text-preset-4: 18px;
+  --text-preset-6: 16px;
+  --text-preset-8: 14px;
+  --text-preset-9: 15px;
+
+  /* Tablet */
+  --text-preset-2-tab: 80px;
+  --text-preset-3-tab: 40px;
+  --text-preset-4-tab: 24px;
+  --text-preset-5-tab: 20px;
+  --text-preset-9-tab: 16px;
+
+  /* Desktop */
+  --text-preset-1-lg: 144px;
+  --text-preset-2-lg: 96px;
+  --text-preset-3-lg: 56px;
+  --text-preset-4-lg: 32px;
+  --text-preset-5-lg: 28px;
+  --text-preset-6-lg: 28px;
+  --text-preset-7-lg: 14px;
+  --text-preset-8-lg: 16px;
+  --text-preset-9-lg: 18px;
+
+  /* Spacing */
+  --space-25: 2px;
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-150: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-600: 48px;
+  --space-800: 64px;
+  --space-1000: 80px;
+  --space-1200: 96px;
+  --space-1600: 128px;
+}
+
+@layer components {
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(theme(colors.white) 0 0);
+    background:
+      var(--c) 0% 50%,
+      var(--c) 50% 50%,
+      var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
+
+  @keyframes loading {
+    20% {
+      background-position:
+        0% 0%,
+        50% 50%,
+        100% 50%;
+    }
+    40% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 50%;
+    }
+    60% {
+      background-position:
+        0% 50%,
+        50% 100%,
+        100% 0%;
+    }
+    80% {
+      background-position:
+        0% 50%,
+        50% 50%,
+        100% 100%;
+    }
+  }
+
+  .circle::before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s ease-in-out;
+    @apply absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 transform rounded-full opacity-0 sm:h-[408px] sm:w-[408px];
+  }
+
+  .nav-active::before {
+    content: "";
+    background-color: white;
+    width: 100%;
+    transform: translateY(58px);
+    height: 3px;
+    position: absolute;
+  }
+
+  .nav:hover::before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    transform: translateY(58px);
+    height: 3px;
+    position: absolute;
+  }
+
+  .dest-nav-active::before {
+    content: "";
+    background-color: white;
+    width: 100%;
+    bottom: 0;
+    height: 3px;
+    position: absolute;
+  }
+
+  .dest-nav:hover::before {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    bottom: 0;
+    height: 3px;
+    position: absolute;
+  }
+
+  .circle:hover::before {
+    @apply opacity-100;
+  }
+}
