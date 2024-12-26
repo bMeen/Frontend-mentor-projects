@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-magnolia lg:h-dvh lg:place-content-center;
+}
+
+.switch label::after {
+  content: "";
+  display: inherit;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.switch input:checked ~ label::after {
+  transform: translateX(18px);
+  background-color: #fff;
+}
